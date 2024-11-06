@@ -1,0 +1,1042 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+.main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(AboutBackground.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 70vh;
+    background-size: cover;
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em 0;
+    border-bottom: 1px solid #fff;
+    position: fixed;
+    width: 100%;
+    transition: background-color .3s ease;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    width: 190px;
+}
+
+.navbar .logo h1{
+    font-size: 2.5em;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.navbar .navlist a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3em;
+    margin: 0 10px;
+    position: relative;
+}
+
+.navbar .navlist a::after{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: width .5s ease;
+}
+
+.navbar .navlist a:hover::after{
+    width: 100%;
+}
+
+
+.navbar .navSearch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    width: 400px;
+}
+
+.navSearch input{
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+    width: 150px;
+}
+
+.navSearch input::placeholder{
+    color: #fff;
+    font-size: 20px;
+}
+
+.navSearch h1{
+    font-weight: 400;
+    font-size: 1.3em;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.navSearch h1::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+}
+
+.navSearch h1.scrolled::after{
+    background-color: green;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+}
+
+.sectionCenter {
+    background-color: transparent;
+    color: #fff;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectionCenter h2{
+    font-size: 8em;
+    font-weight: 400;
+}
+
+.menuBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    cursor: pointer;
+}
+
+.sideBar {
+    background-color: black;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    line-height: 5;
+    text-align: center;
+    overflow: hidden;
+    transition: top 0.3s ease, opacity 0.3s ease, background-color .5s ease;
+}
+
+.show {
+    top: 0;
+    opacity: 1;
+}
+
+.remove {
+    top: -100vh;
+    opacity: 0;
+}
+
+.sideBar:active {
+    height: 100%;
+}
+
+.sideBar svg {
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+
+.sideBar a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    margin: 0 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.sideBar a:hover{
+    background-color: hsl(0, 0%, 7%);
+}
+.sideBar svg:hover{
+    background-color: hsl(0, 0%, 7%);
+}
+
+.contactSection {
+    display: flex;
+    justify-content: space-between;
+    padding: 10% 15%;
+}
+
+.contactSection h2 {
+    font-size: 5em;
+    font-weight: 200;
+}
+
+.contactSection h3 {
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.contactSection p {
+    font-size: 1.2em;
+    font-weight: 200;
+}
+
+.contactInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+.contactInput input, textarea{
+    border: none;
+    border-bottom: 1px solid #b5b5b5;
+    outline: none;
+    font-size: 1.4em;
+    font-weight: 400;
+    line-height: 2.2;
+    margin: .5em 0;
+    padding-left: 15px;
+    color: rgba(0, 0, 0, 0.76);;
+}
+
+.contactInput input::placeholder{
+    color: rgba(0, 0, 0, 0.425);
+}
+
+.contactOffice, .contactManagement {
+    line-height: 3;
+}
+
+.contactInputBtn {
+    text-align: center;
+}
+
+.contactInputBtn button {
+    font-size: 1.1em;
+    padding: .5em 3em;
+    border: none;
+    background-color: black;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color .3s ease;
+    letter-spacing: 1px;
+    margin-top: 2em;
+}
+
+.contactInputBtn button:hover {
+    background-color: hsl(0, 0%, 10%);
+}
+
+.shopCollections  {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 6%;
+    margin-bottom: 15%;
+    margin-top: 5%;
+}
+
+.shopCollections img {
+    width: 500px;
+    height: auto;
+    cursor: pointer;
+}
+
+.shopCollections p {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1em 0;
+}
+
+.AboutUsTexts {
+    text-align: center;
+    padding: 10% 20% 0 20%;
+}
+.myImg img {
+    width: 600px;
+    height: 600px;
+}
+.AboutUsTexts h2{
+    font-size: 6em;
+    font-weight: 200;
+}
+
+.AboutUsTexts p{
+    font-size: 1.2em;
+    font-weight: 200;
+    line-height: 1.5;
+}
+
+.aboutUsContacts {
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+}
+
+.aboutUsContactsText {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+.introText h2 {
+    font-size: 6em;
+    font-weight: 200;
+}
+.introText p {
+    font-size: 1.1em;
+    font-weight: 200;
+}
+.belowText h3 {
+    font-size: 2em;
+    font-weight: 300;
+    text-decoration: underline;
+    margin-bottom: 7px;
+}
+.belowText p {
+    font-size: 1.4em;
+    font-weight: 300;
+}
+
+.recentsBlogs {
+    margin: 15% 0;
+}
+
+.recentsBlogs img {
+    width: 500px;
+    height: 450px;
+}
+
+.recentImg {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    cursor: pointer;
+}
+
+.recentsBlogs h2 {
+    font-size: 5em;
+    font-weight: 300;
+    text-align: center;
+}
+
+.recentsBlogsP {
+    font-size: 1.250em;
+    font-weight: 200;
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+.recentImg h3 {
+    font-size: 2em;
+    font-weight: 300;
+    max-width: 500px;
+}
+
+.recentImg p {
+    font-size: 1.250em;
+    font-weight: 200;
+}
+
+.readAllBtn {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.readAllBtn a {
+    font-size: 1.3em;
+    padding: .2em 2em;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+}
+
+.readAllBtn a:hover {
+    background-color: hsl(0, 0%, 10%);
+}
+
+.randomCompany {
+    border-top: 1px solid hsl(0, 0%, 85%);
+    border-bottom: 1px solid hsl(0, 0%, 85%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3em 0;
+    gap: 3%;
+    margin-bottom: 15%;
+}
+
+.randomCompany h1{
+    font-size: 3em;
+    color: hsl(0, 0%, 60%);
+    cursor: pointer;
+}
+
+.randomCompany h1:hover {
+    color: black;
+}
+
+.newArrivals {
+    margin-bottom: 13em;
+    display: flex;
+}
+
+.newArrivalsMid {
+    background-color: black;
+    color: #fff;
+    width: 41%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+}
+
+.newArrivalsMid h2 {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.newArrivalsMid h3 {
+    font-size: 2.3em;
+}
+
+.newArrivals img{
+    width: 32%;
+    height: auto;
+}
+
+.newArrivalsMidBtn {
+    text-decoration: none;
+    color: black;
+    background-color: #fff;
+    padding: .5em 1em;
+    transition: background-color .3s ease;
+}
+
+.newArrivalsMidBtn:hover{
+    background-color: hsl(0, 0%, 85%);
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 5em;
+}
+
+.link1 {
+    display: flex;
+    flex-direction: column;
+}
+.link2 {
+    display: flex;
+    flex-direction: column;
+}
+.link3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.link1 h3 {
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+.link2 h3 {
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+.link3 h3 {
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.link1 a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3em;
+    font-weight: 200;
+    line-height: 2;
+}
+.link2 a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3em;
+    font-weight: 200;
+    line-height: 2;
+}
+
+.link3 a {
+    color: black;
+    font-size: 1.3em;
+    font-weight: 200;
+}
+
+.link3 p {
+    font-size: 1.1em;
+    font-weight: 200;
+}
+
+.contactLink {
+    margin-bottom: 15px;
+}
+
+.link1 a:hover, .link2 a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+    .sectionCenter h2{
+        font-size: 5em;
+        font-weight: 500;
+    }
+    .shopCollections {
+        display: none;
+    }
+    .navlist {
+        display: none;
+    }
+    .navSearch h1{
+        display: none;
+    }
+    .searchBar {
+        display: none;
+    }
+    .navbar {
+        padding: .5em;
+    }
+    .menuBar {
+        display: flex;
+    }
+    .contactSection {
+        padding: 15% 4%;
+    }
+    .contactSection h2 {
+        font-size: 4em;
+    }
+    .contactSection h3 {
+        font-size: 1.5em;
+        font-weight: 300;
+    }
+    .contactSection p {
+        font-size: 1.1em;
+        font-weight: 200;
+    }
+    .contactInfo {
+        max-width: 480px;
+    }
+    .contactOffice, .contactManagement {
+        max-width: 300px;
+    }
+    #address {
+        line-height: 1.5;
+    }
+    .aboutUsContacts {
+        gap: 2em;
+        padding: 5em 1em;
+    }
+    .aboutUsContactsText {
+        gap: 2em;
+    }
+    .introText h2 {
+        line-height: 1;
+    }
+    .belowText h3 {
+        font-size: 1.5em;
+    }
+    .belowText p {
+        font-size: 1.1em;
+    }
+    .belowText p {
+        line-height: 1.7;
+    }
+    .recentsBlogs {
+        margin: 20% 0;
+    }
+    .recentsBlogs img {
+        width: 300px;
+        height: 250px;
+    }
+    .recentImg {
+        gap: 1.5em;
+    }
+    .recentsBlogs h2 {
+        font-size: 4em;
+        font-weight: 300;
+    }
+    .recentsBlogsP {
+        font-size: 1.2em;
+        font-weight: 200;
+    }
+    .recentImg h3 {
+        font-size: 1.8em;
+        font-weight: 300;
+        max-width: 300px;
+        margin-bottom: 5px;
+    }
+    .recentImg p {
+        font-size: 1.1em;
+        font-weight: 200;
+        max-width: 300px;
+    }
+    .randomCompany {
+        padding: 2em 0;
+        gap: 5%;
+        margin: 10em 0;
+    }
+    .randomCompany h1{
+        font-size: 1.6em;
+    }
+    .randomCompany {
+        margin: 12em 0;
+    }
+    .link1 h3, .link2 h3, .link3 h3 {
+        font-size: 1.8em;
+        font-weight: 200;
+    }
+    .link1 a, .link2 a, .link3 a {
+        font-size: 1.1em;
+        font-weight: 200;
+    }
+    footer {
+        margin-bottom: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .sectionCenter h2{
+        font-size: 5em;
+        line-height: 1.2;
+    }
+    .aboutUsContacts {
+        gap: 2em;
+        padding: 0 1em;
+    }
+    .introText h2 {
+        font-size: 4em;
+        font-weight: 200;
+    }
+    .myImg img {
+        width: 450px;
+        height: auto;
+    }
+    .randomCompany {
+        padding: 3em 0;
+        gap: 3%;
+        margin: 8em 0;
+    }
+    .randomCompany h1{
+        font-size: 1.4em;
+    }
+    .newArrivals {
+        margin-bottom: 10em;
+    }
+    .newArrivalsMid {
+        gap: 10%;
+    }
+    .newArrivalsMid h2 {
+        font-size: 1.1em;
+        font-weight: 500;
+    }
+    .newArrivalsMid h3 {
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+    .newArrivalsMidBtn {
+        padding: .2em;
+        font-size: 1em;
+        font-weight: 100;
+    }
+    .link1 h3, .link2 h3, .link3 h3 {
+        font-size: 1.3em;
+        font-weight: 400;
+    } 
+
+    .link1 a, .link2 a, .link3 a {
+        font-size: 1.1em;
+        font-weight: 100;
+        line-height: 2;
+    }
+    .link3 p {
+        font-size: 1.1em;
+        font-weight: 100;
+    }
+    .contactSection {
+        padding: 15% 4%;
+    }
+    .contactSection h2 {
+        font-size: 4em;
+    }
+    .contactSection h3 {
+        font-size: 1.5em;
+        font-weight: 300;
+    }
+    .contactSection p {
+        font-size: 1.1em;
+        font-weight: 200;
+    }
+    .contactInfo {
+        max-width: 480px;
+    }
+    .contactOffice, .contactManagement {
+        max-width: 300px;
+    }
+    #address {
+        line-height: 1.5;
+    }
+    .recentsBlogs {
+        margin: 20% 0;
+    }
+    .recentsBlogs img {
+        width: 220px;
+        height: 170px;
+    }
+    .recentImg {
+        gap: 1.5em;
+    }
+    .recentsBlogs h2 {
+        font-size: 4em;
+        font-weight: 300;
+    }
+    .recentsBlogsP {
+        font-size: 1.2em;
+        font-weight: 200;
+    }
+    .recentImg h3 {
+        font-size: 1.8em;
+        font-weight: 300;
+        max-width: 220px;
+        margin-bottom: 5px;
+    }
+    .recentImg p {
+        font-size: 1.1em;
+        font-weight: 200;
+        max-width: 220px;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .contactSection {
+        flex-direction: column;
+    }
+    .sectionCenter h2{
+        font-size: 4em;
+    }
+    .randomCompany {
+        padding: 2.5em 0;
+        gap: 3%;
+        margin: 8em 0;
+    }
+    .randomCompany h1{
+        font-size: 1.3em;
+    }
+    .newArrivals {
+        margin-bottom: 8em;
+    }
+    .newArrivalsMid {
+        gap: 10%;
+    }
+    .newArrivalsMid h2 {
+        font-size: 1em;
+        font-weight: 400;
+    }
+    .newArrivalsMid h3 {
+        font-size: 1.1em;
+        font-weight: 500;
+    }
+    .newArrivalsMidBtn {
+        padding: .4em;
+        font-size: 12px;
+        font-weight: 300;
+    }
+    footer {
+        flex-direction: column;
+        float: left;
+        padding-left: 1em;
+        gap: 2em;
+        align-items: normal;
+    }
+    .link1 h3, .link2 h3, .link3 h3 {
+        font-size: 1.6em;
+        font-weight: 500;
+    } 
+
+    .link1 a, .link2 a, .link3 a {
+        font-size: 1.2em;
+        font-weight: 200;
+        line-height: 2;
+    }
+    .link3 p {
+        font-size: 1.1em;
+        font-weight: 200;
+    }
+    .aboutUsContacts {
+        gap: 2em;
+        padding: 0 1em;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .introText h2 {
+        font-size: 4em;
+        font-weight: 200;
+    }
+    .myImg img {
+        width: 450px;
+        height: auto;
+    }
+    .belowText p {
+        line-height: 1.5;
+    }
+    .recentImg {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3em;
+    }
+    .recentsBlogs {
+        margin: 50% 0;
+    }
+    .recentsBlogs img {
+        width: 450px;
+        height: 400px;
+    }
+    .recentImg {
+        gap: 1.5em;
+    }
+    .recentsBlogs h2 {
+        font-size: 4em;
+        font-weight: 300;
+    }
+    .recentsBlogsP {
+        font-size: 1.2em;
+        font-weight: 200;
+    }
+    .recentImg h3 {
+        font-size: 1.8em;
+        font-weight: 300;
+        max-width: 450px;
+        margin-bottom: 5px;
+    }
+    .recentImg p {
+        font-size: 1.1em;
+        font-weight: 200;
+        max-width: 450px;
+    }
+    .contactSection {
+        padding: 15% 4%;
+    }
+    .contactSection h2 {
+        font-size: 4.5em;
+        font-weight: 300;
+        line-height: 1.5;
+    }
+    .contactSection h3 {
+        font-size: 1.8em;
+    }
+    .questions h2 {
+        line-height: 1;
+        margin-bottom: 20px;
+        margin-top: .5em;
+    }
+}
+
+@media (max-width: 414px) {
+    .randomCompany h1{
+        font-size: .9em;
+        font-weight: 300;
+    }
+    .recentImg {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 3em;
+    }
+    .recentsBlogs {
+        margin: 50% 0;
+    }
+    .recentsBlogs img {
+        width: 350px;
+        height: auto;
+    }
+    .recentImg {
+        gap: 5em;
+    }
+    .recentsBlogs h2 {
+        font-size: 3em;
+        font-weight: 300;
+    }
+    .recentsBlogsP {
+        font-size: 1.1em;
+        font-weight: 200;
+    }
+    .recentImg h3 {
+        font-size: 1.8em;
+        font-weight: 400;
+        max-width: 450px;
+        margin-bottom: 5px;
+    }
+    .recentImg p {
+        font-size: 1.1em;
+        font-weight: 200;
+        max-width: 450px;
+        padding: 0;
+    }
+    .aboutUsContacts {
+        gap: 2em;
+        padding: 0 1em;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .introText h2 {
+        font-size: 4em;
+        font-weight: 200;
+    }
+    .myImg img {
+        width: 100%;
+        height: auto;
+    }
+    .belowText p {
+        line-height: 1.5;
+    }
+    .sectionCenter h2 {
+        font-size: 4em;
+    }
+    .contactSection {
+        padding: 50% 4%;
+    }
+    .contactSection h2 {
+        font-size: 4em;
+        font-weight: 300;
+        line-height: 1;
+    }
+    .questions h2 {
+        line-height: 1;
+        margin-bottom: 20px;
+        margin-top: .5em;
+    }
+}
+
+@media (max-width: 320px) {
+    .recentImg h3 {
+        font-size: 1.6em;
+        max-width: 270px;
+    }
+    .recentImg p {
+        font-size: 1.1em;
+        font-weight: 200;
+        max-width: 270px;
+    }
+    .recentsBlogs img {
+        width: 270px;
+        height: auto;
+    }
+    .randomCompany {
+        padding: 2.5em 0;
+        gap: 3%;
+        margin: 8em 0;
+    }
+    .randomCompany h1{
+        font-size: .9em;
+        font-weight: 300;
+    }
+    .link1 h3, .link2 h3, .link3 h3 {
+        font-size: 1.4em;
+        font-weight: 500;
+    } 
+
+    .link1 a, .link2 a, .link3 a {
+        font-size: 1.050em;
+    }
+    .link3 p {
+        font-size: 1em;
+        font-weight: 200;
+    }
+    .sectionCenter h2{
+        font-size: 3em;
+    }
+    .navbar .logo {
+        width: 550px;
+    }
+    .navbar .logo svg{
+        width: 32px;
+        height: 32px;
+    }
+    .navbar .logo h1{
+        font-size: 2em;
+        font-weight: 400;
+        cursor: pointer;
+    }
+    .link1 h3, .link2 h3, .link3 h3 {
+        font-size: 1.4em;
+    } 
+
+    .link1 a, .link2 a, .link3 a {
+        font-size: 1em;
+        font-weight: 200;
+        line-height: 2;
+    }
+    .link3 p {
+        font-size: .9em;
+        font-weight: 100;
+    }
+    .newArrivalsMid {
+        gap: 5%;
+    }
+    .newArrivalsMid h2 {
+        font-size: .6em;
+    }
+    .newArrivalsMid h3 {
+        text-align: center;
+        font-size: .8em;
+        font-weight: 500;
+    }
+    .newArrivalsMidBtn {
+        padding: .5em;
+        font-size: 7px;
+    }
+    .contactSection h2 {
+        font-size: 3em;
+        font-weight: 300;
+        line-height: 1;
+    }
+    .contactSection h3 {
+        font-size: 1.8em;
+        font-weight: 300;
+    }
+    .contactInput {
+        font-size: 13px;
+    }
+}

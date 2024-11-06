@@ -1,0 +1,1198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+.main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(AboutBackground.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 70vh;
+    background-size: cover;
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em 0;
+    border-bottom: 1px solid #fff;
+    position: fixed;
+    width: 100%;
+    transition: background-color .3s ease;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    width: 190px;
+}
+
+.navbar .logo h1{
+    font-size: 2.5em;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.navbar .navlist a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3em;
+    margin: 0 10px;
+    position: relative;
+}
+
+.navbar .navlist a::after{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: width .5s ease;
+}
+
+.navbar .navlist a:hover::after{
+    width: 100%;
+}
+
+
+.navbar .navSearch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    width: 400px;
+}
+
+.navSearch input{
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+    width: 150px;
+}
+
+.navSearch input::placeholder{
+    color: #fff;
+    font-size: 20px;
+}
+
+.navSearch h1{
+    font-weight: 400;
+    font-size: 1.3em;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.navSearch h1::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+}
+
+.navSearch h1.scrolled::after{
+    background-color: green;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+}
+
+.sectionCenter {
+    background-color: transparent;
+    color: #fff;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectionCenter h2{
+    font-size: 8em;
+    font-weight: 400;
+}
+
+.menuBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    cursor: pointer;
+}
+
+.sideBar {
+    background-color: black;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    line-height: 5;
+    text-align: center;
+    overflow: hidden;
+    transition: top 0.3s ease, opacity 0.3s ease, background-color .5s ease;
+}
+
+.show {
+    top: 0;
+    opacity: 1;
+}
+
+.remove {
+    top: -100vh;
+    opacity: 0;
+}
+
+.sideBar:active {
+    height: 100%;
+}
+
+.sideBar svg {
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+
+.sideBar a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3em;
+    margin: 0 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.sideBar a:hover{
+    background-color: hsl(0, 0%, 7%);
+}
+.sideBar svg:hover{
+    background-color: hsl(0, 0%, 7%);
+}
+.shopContainer {
+    padding: 10%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.shopSearchBar {
+    display: flex;
+    margin-bottom: 3em;
+}
+.search-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.shopSearchBar input {
+    font-size: 1.3em;
+    padding: .2em 2em .2em 0;
+    border: none;
+    border-bottom: 1px solid #b5b5b5;
+    outline: none;
+    font-style: italic;
+}
+.search-icon svg {    
+    position: absolute;
+    right: 0;
+    padding: .2em 0;
+}
+
+.categories, .tags, .color, .size, .price {
+    display: flex;
+    flex-direction: column;
+}
+.categories h2, .tags h2, .color h2, .size h2, .price h2 {
+    font-size: 2em;
+    font-weight: 300;
+    text-decoration: underline;
+    margin-bottom: .5em;
+}
+.categories a, .tags a, .color a, .size a, .price a {
+    color: hsl(0, 0%, 30%);
+    text-decoration: none;
+    line-height: 2;
+    font-size: 1.3em;
+    font-weight: 300;
+    max-width: 120px;
+}
+
+.shopCategories a:hover {
+    text-decoration: underline;
+}
+
+.shopSorting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5em;
+}
+.shopSorting p {
+    font-size: 1.1em;
+    font-weight: 200;
+}
+.shopSorting select {
+    font-size: 1em;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.trendingSection {
+    text-align: center;
+    gap: 10px;
+    position: relative;
+}
+
+.trendingLists {
+    gap: 20px;
+    display: flex;
+}
+
+.trendingLists img {
+    width: 350px;
+    height: 400px;
+    cursor: pointer;
+}
+
+.trendingLists h2 {
+    font-weight: 300;
+    font-size: 1.7em;
+}
+
+.trendingLists p {
+    line-height: 2.5;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.imgHover {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addToCart{
+    text-decoration: none;
+    color: black;
+    position: absolute;
+    background-color: #fff;
+    font-size: 20px;
+    padding: .2em 3em;
+    margin-bottom: 5em;
+    opacity: 0;
+}
+
+.addToCart:hover {
+    background-color: black;
+    color: #fff;
+}
+
+.addToCart:active {
+    background-color: hsl(0, 0%, 30%);
+}
+
+.deliverySection {
+    display: flex;
+    justify-content: center;
+    gap: 10em;
+    padding: 0% 15%;
+    min-width: 100%;
+}
+
+.quickDelivery, .storePickUp, .packaging {
+    text-align: center;
+}
+
+.quickDelivery h4, .storePickUp h4, .packaging h4 {
+    font-size: 1.5em;
+    font-weight: 300
+}
+
+.quickDelivery p, .storePickUp p, .packaging p {
+    font-size: 1.1rem;
+    font-weight: 200;
+}
+
+.quickDelivery svg, .storePickUp svg, .packaging svg{
+    width: 80px;
+    height: 80px;
+}
+
+.randomCompany {
+    border-top: 1px solid hsl(0, 0%, 85%);
+    border-bottom: 1px solid hsl(0, 0%, 85%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0;
+    gap: 3%;
+    margin: 15em 0;
+}
+
+.randomCompany h1{
+    font-size: 3em;
+    color: hsl(0, 0%, 60%);
+    cursor: pointer;
+}
+
+.randomCompany h1:hover {
+    color: black;
+}
+
+.newArrivals {
+    margin-bottom: 13em;
+    display: flex;
+}
+
+.newArrivalsMid {
+    background-color: black;
+    color: #fff;
+    width: 41%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+}
+
+.newArrivalsMid h2 {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.newArrivalsMid h3 {
+    font-size: 2.3em;
+}
+
+.newArrivals img{
+    width: 32%;
+    height: auto;
+}
+
+.newArrivalsMidBtn {
+    text-decoration: none;
+    color: black;
+    background-color: #fff;
+    padding: .5em 1em;
+    transition: background-color .3s ease;
+}
+
+.newArrivalsMidBtn:hover{
+    background-color: hsl(0, 0%, 85%);
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 5em;
+}
+
+.link1 {
+    display: flex;
+    flex-direction: column;
+}
+.link2 {
+    display: flex;
+    flex-direction: column;
+}
+.link3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.link1 h3 {
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+.link2 h3 {
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+.link3 h3 {
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.link1 a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3em;
+    font-weight: 200;
+    line-height: 2;
+}
+.link2 a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3em;
+    font-weight: 200;
+    line-height: 2;
+}
+
+.link3 a {
+    color: black;
+    font-size: 1.3em;
+    font-weight: 200;
+}
+
+.link3 p {
+    font-size: 1.1em;
+    font-weight: 200;
+}
+
+.contactLink {
+    margin-bottom: 15px;
+}
+
+.link1 a:hover, .link2 a:hover {
+    text-decoration: underline;
+}
+
+.menuBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    cursor: pointer;
+}
+
+.sideBar {
+    background-color: black;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    z-index: 9000;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    line-height: 5;
+    text-align: center;
+    overflow: hidden;
+    transition: top 0.3s ease, opacity 0.3s ease, background-color .5s ease;
+}
+
+.show {
+    top: 0;
+    opacity: 1;
+}
+
+.remove {
+    top: -100vh;
+    opacity: 0;
+}
+
+.sideBar:active {
+    height: 100%;
+}
+
+.sideBar svg {
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+
+.sideBar a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    margin: 0 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.sideBar a:hover{
+    background-color: hsl(0, 0%, 7%);
+}
+.sideBar svg:hover{
+    background-color: hsl(0, 0%, 7%);
+}
+
+.trendingHoodies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+
+.checkOut {
+    color: black;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 31%;
+    z-index: 1;
+    display: none;
+}
+
+#errorCheckout {
+    font-weight: 300;
+    color: red;
+    padding-left: 3em;
+    display: none;
+}
+
+#errorCheckout .success {
+    font-weight: 300;
+    color: green;
+    padding-left: 3em;
+    display: none;
+}
+
+.checkOut svg {
+    position: absolute;
+    background-color: hsl(0, 0%, 50%);
+    right: 10px;
+    top: 10px;
+    transition: background-color .3s ease;
+}
+
+.checkOut svg:hover {
+    background-color: red;
+}
+
+.personalInfo {
+    padding: 1em 3em;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+.personalInfo h3{
+    font-size: 1.5em;
+    color: #b5b5b5;
+    font-weight: 500;
+}
+.name, .number, .address {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1em;
+    width: 100%;
+}
+
+.personalInfo input {
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 200;
+    border-bottom: 1px solid black;
+    min-width: 100%;
+    margin-top: .3em;
+    padding: 5px 0;
+}
+
+.personalInfo input[type="text"] {
+    padding-left: 10px;
+}
+
+.personalInfo input::placeholder {
+    color: hsl(0, 0%, 60%);
+}
+
+label {
+    font-size: 1em;
+    font-weight: 200;
+}
+
+.cardInfo {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 3em;
+}
+
+.cardNumber {
+    width: 100%;
+}
+
+.cardNumber input {
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 200;
+    border-bottom: 1px solid black;
+    width: 100%;
+    margin-top: .3em;
+    padding: 5px 0;
+}
+
+.cardNumber input[type="text"] {
+    padding-left: 10px;
+}
+
+.cardNumber input::placeholder {
+    color: hsl(0, 0%, 60%);
+}
+
+.date {
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.date select {
+    cursor: pointer;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.date input {
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 200;
+    border-bottom: 1px solid black;
+    width: 20%;
+    margin-top: .3em;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.cardImg img {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+}
+
+.checkoutBtn {
+    text-align: center;
+}
+
+.checkoutBtn button {
+    cursor: pointer;
+    background-color: rgb(2, 85, 2);
+    border: none;
+    color: #fff;
+    padding: .3em 2em;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.checkoutBtn button:hover {
+    background-color: hsl(120, 100%, 20%);
+}
+
+@media (max-width: 1024px) {
+    .checkOut {
+        width: 80%;
+        height: 39%;
+    }
+    .checkoutBtn {
+        margin-top: 15px;
+        text-align: center;
+    }
+
+
+    .navlist {
+        display: none;
+    }
+    .navSearch h1{
+        display: none;
+    }
+    .searchBar {
+        display: none;
+    }
+    .navbar {
+        padding: .5em;
+    }
+    .menuBar {
+        display: flex;
+    }
+    .deliverySection {
+        gap: 2em;
+        padding: 5% 3%;
+        min-width: 100%;
+    }
+    .deliverySection p {
+        font-size: 17px;
+    }
+    .link1 h3, .link2 h3, .link3 h3 {
+        font-size: 1.8em;
+        font-weight: 200;
+    }
+    .link1 a, .link2 a, .link3 a {
+        font-size: 1.1em;
+        font-weight: 200;
+    }
+    footer {
+        margin-bottom: 1em;
+    }
+    .randomCompany {
+        padding: 2em 0;
+        gap: 5%;
+        margin: 12em 0;
+    }
+    .randomCompany h1{
+        font-size: 1.6em;
+    }
+    .shopContainer {
+        padding: 10% 2%;
+    }
+    .search-icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    .shopSearchBar input {
+        font-size: 1.2em;
+        padding: .2em 0 .2em 0;
+        width: 200px;
+    }
+    
+    .shopSorting {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 5em;
+    }
+    .trendingLists {
+        gap: 20px;
+        display: flex;
+    }
+    .trendingLists img {
+        width: 250px;
+        height: 350px;
+        cursor: pointer;
+    }
+    .trendingLists h2 {
+        font-weight: 300;
+        font-size: 1.7em;
+    }
+    .trendingLists p {
+        line-height: 2.5;
+        font-size: 18px;
+        font-weight: 300;
+    }
+    .categories h2, .tags h2, .color h2, .size h2, .price h2 {
+        font-size: 1.5em;
+        font-weight: 400;
+        margin-bottom: .5em;
+    }
+    .categories a, .tags a, .color a, .size a, .price a {
+        line-height: 2;
+        font-size: 1.2em;
+        font-weight: 300;
+    }
+}
+
+@media (max-width: 768px) {
+    .checkOut {
+        width: 80%;
+        height: 52%;
+    }
+    .checkoutBtn {
+        margin-top: 15px;
+        text-align: center;
+    }
+    .shopContainer {
+        padding: 10% 2%;
+    }
+    .shopSearchBar input {
+        font-size: 1.1em;
+        padding: .2em 0 .2em 0;
+        width: 180px;
+    }
+    .trendingLists {
+        gap: 5px;
+        display: flex;
+    }
+    .trendingLists img {
+        width: 180px;
+        height: 250px;
+    }
+    .trendingLists h2 {
+        font-size: 1em;
+        font-weight: 500;
+    }
+    .trendingLists p {
+        font-size: 1em;
+    }
+    .categories h2, .tags h2, .color h2, .size h2, .price h2 {
+        font-size: 1.3em;
+    }
+    .categories a, .tags a, .color a, .size a, .price a {
+        line-height: 2;
+        font-size: 1em;
+        font-weight: 300;
+    }
+    .addToCart{
+        font-size: 15px;
+        padding: .2em 1em;
+    }
+    .sectionCenter h2{
+        font-size: 4em;
+        font-weight: 600;
+    }
+    .deliverySection {
+        gap: 0;
+        padding: 10% 0;
+    }
+    .deliverySection svg {
+        width: 60px;
+        height: 60px;
+    }
+    .deliverySection h4 {
+        font-size: 1.4em;
+        font-weight: 400;
+    }
+    .deliverySection p {
+        font-size: 1em;
+    }
+    .randomCompany {
+        padding: 2em 0;
+        gap: 3%;
+        margin: 8em 0;
+    }
+    .randomCompany h1{
+        font-size: 1.4em;
+    }
+    .newArrivals {
+        margin-bottom: 10em;
+    }
+    .newArrivalsMid {
+        gap: 10%;
+    }
+    .newArrivalsMid h2 {
+        font-size: 1.1em;
+        font-weight: 500;
+    }
+    .newArrivalsMid h3 {
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+    .newArrivalsMidBtn {
+        padding: .2em;
+        font-size: 1em;
+        font-weight: 100;
+    }
+
+    .link1 h3, .link2 h3, .link3 h3 {
+        font-size: 1.3em;
+        font-weight: 400;
+    } 
+
+    .link1 a, .link2 a, .link3 a {
+        font-size: 1.1em;
+        font-weight: 100;
+        line-height: 2;
+    }
+    .link3 p {
+        font-size: 1.1em;
+        font-weight: 100;
+    }
+    .shopSorting p {
+        font-size: 1.1em;
+        font-weight: 200;
+    }
+    .shopSorting select {
+        font-size: 1em;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 500px) {
+    .checkOut {
+        width: 90%;
+        height: 9%;
+    }
+    .shopSorting p {
+        font-size: 1.2em;
+    }
+    .shopSorting select {
+        font-size: 1.1em;
+    }
+    .sectionCenter h2{
+        font-size: 2.3em;
+    }
+    .deliverySection {
+        padding: 10% 0 0 0;
+        flex-direction: column;
+        gap: 3em;
+    }
+    .deliverySection p {
+        margin-bottom: 3em;
+    }
+    .randomCompany {
+        padding: 2.5em 0;
+        gap: 3%;
+        margin: 8em 0;
+    }
+    .randomCompany h1{
+        font-size: 1.3em;
+    }
+    .newArrivals {
+        margin-bottom: 8em;
+    }
+    .newArrivalsMid {
+        gap: 10%;
+    }
+    .newArrivalsMid h2 {
+        font-size: 1em;
+        font-weight: 400;
+    }
+    .newArrivalsMid h3 {
+        font-size: 1.1em;
+        font-weight: 500;
+    }
+    .newArrivalsMidBtn {
+        padding: .4em;
+        font-size: 12px;
+        font-weight: 300;
+    }
+    footer {
+        flex-direction: column;
+        float: left;
+        padding-left: 1em;
+        gap: 2em;
+        align-items: normal;
+    }
+    .link1 h3, .link2 h3, .link3 h3 {
+        font-size: 1.6em;
+        font-weight: 500;
+    } 
+
+    .link1 a, .link2 a, .link3 a {
+        font-size: 1.2em;
+        font-weight: 200;
+        line-height: 2;
+    }
+    .link3 p {
+        font-size: 1.1em;
+        font-weight: 200;
+    }
+    .trendingLists {
+        gap: 2em;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .trendingLists img {
+        width: 480px;
+        height: 550px;
+        padding: 0 1em;
+    }
+    .shopContainer {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+    }
+    .trendingLists h2 {
+        font-size: 1.8em;
+        font-weight: 300;
+    }
+    .trendingLists p {
+        font-size: 1.3em;
+    }
+    .addToCart{
+        font-size: 20px;
+        padding: .2em 3em;
+    }
+    .categories h2, .tags h2, .color h2, .size h2, .price h2 {
+        font-size: 1.5em;
+    }
+    .categories a, .tags a, .color a, .size a, .price a {
+        line-height: 2;
+        font-size: 1.2em;
+        font-weight: 300;
+    }
+}
+
+@media (max-width: 425px) {
+    .checkOut {
+        width: 90%;
+        height: 10%;
+    }
+    .trendingLists img {
+        width: 400px;
+        height: 450px;
+    }
+    .shopSorting p {
+        font-size: 1.1em;
+    }
+    .shopSorting select {
+        font-size: 1em;
+    }
+    .randomCompany {
+        padding: 2.5em 0;
+        gap: 3%;
+        margin: 8em 0;
+    }
+    .randomCompany h1{
+        font-size: 1em;
+        font-weight: 400;
+    }
+}
+
+@media (max-width: 375px) {
+    .checkOut {
+        width: 90%;
+        height: 11%;
+    }
+    .trendingLists img {
+        width: 330px;
+        height: 400px;
+    }
+    .randomCompany {
+        padding: 2.5em 0;
+        gap: 3%;
+        margin: 8em 0;
+    }
+    .randomCompany h1{
+        font-size: .9em;
+        font-weight: 300;
+    }
+    .link1 h3, .link2 h3, .link3 h3 {
+        font-size: 1.4em;
+        font-weight: 500;
+    } 
+
+    .link1 a, .link2 a, .link3 a {
+        font-size: 1.050em;
+    }
+    .link3 p {
+        font-size: 1em;
+        font-weight: 200;
+    }
+    .sectionCenter h2{
+        font-size: 1.6em;
+    }
+    .sectionCenter p{
+        font-size: 1.050em;
+    }
+    .navbar .logo {
+        width: 380px;
+    }
+    .navbar .logo svg{
+        width: 32px;
+        height: 32px;
+    }
+    .navbar .logo h1{
+        font-size: 2em;
+        font-weight: 400;
+        cursor: pointer;
+    }
+    .link1 h3, .link2 h3, .link3 h3 {
+        font-size: 1.4em;
+    } 
+
+    .link1 a, .link2 a, .link3 a {
+        font-size: 1em;
+        font-weight: 200;
+        line-height: 2;
+    }
+    .link3 p {
+        font-size: .9em;
+        font-weight: 100;
+    }
+    .newArrivalsMid {
+        gap: 5%;
+    }
+    .newArrivalsMid h2 {
+        font-size: .6em;
+    }
+    .newArrivalsMid h3 {
+        text-align: center;
+        font-size: .8em;
+        font-weight: 500;
+    }
+    .newArrivalsMidBtn {
+        padding: .5em;
+        font-size: 7px;
+    }
+}
+
+@media (max-width: 320px) {
+    .sectionCenter {
+        margin-bottom: 5em;
+    }
+    .trendingLists img {
+        width: 320px;
+        height: 400px;
+    }
+    .trendingLists {
+        gap: 2em;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .randomCompany {
+        padding: 2.5em 0;
+        gap: 3%;
+        margin: 5em 0;
+    }
+    .randomCompany h1{
+        font-size: 1em;
+        font-weight: 400;
+    }
+    .shopSorting {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .shopSorting select {
+        margin-left: 10px;
+    }
+    .shopCategories {
+        margin-top: 5em;
+        margin-bottom: 3em;
+    }
+    .newArrivalsMid {
+        gap: 5%;
+    }
+    .newArrivalsMid h2 {
+        font-size: .6em;
+    }
+    .newArrivalsMid h3 {
+        text-align: center;
+        font-size: .8em;
+        font-weight: 500;
+    }
+    .newArrivalsMidBtn {
+        padding: .5em;
+        font-size: 7px;
+    }
+    .link1 h3, .link2 h3, .link3 h3 {
+        font-size: 1.4em;
+        font-weight: 500;
+    } 
+
+    .link1 a, .link2 a, .link3 a {
+        font-size: 1.050em;
+    }
+    .link3 p {
+        font-size: 1em;
+        font-weight: 200;
+    }
+}
